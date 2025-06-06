@@ -18,7 +18,7 @@ const ageEl = document.querySelector('.age');
 const btnEl = document.querySelector('.btn');
 const inputEl = document.querySelector('.inputs')
 
-console.log()
+console.log(nameEl, distanceEl, ageEl, btnEl, inputEl)
 
 const priceForKm = 0.21;
 let price = distanceEl * priceForKm;
@@ -35,6 +35,5 @@ inputEl.addEventListener('click', function (e) {
     }
 }
 )
-console.log()
 /* MILESTONE 3:
 Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.b */
