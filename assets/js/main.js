@@ -16,21 +16,25 @@ Solo una volta che il milestone 1 sarà completo e funzionante allora realizzere
 Ora che la logica è funzionante in pagina, possiamo andare a dedicarci allo stile, raffinando la parte di HTML e CSS in modo da renderla esteticamente gradevole.b */
 
 //ELEMENTI INPUT DEL FORM
-const nameInput = document.getElementById('fullname')
+const nameInput = document.getElementById('fullname');
 const distanceInput = document.getElementById('distance');
 const ageInput = document.getElementById('age');
 const form = document.querySelector('.inputs');
 
 //ELEMENTI DEL BIGLIETTO DA VISUALIZZARE
-
+let ticketOwnerNameEl = document.querySelector('.passenger-name');
+let typeTicketEl = document.querySelector('.type-ticket');
+let priceTicketEl = document.querySelector('.price-ticket');
 
 form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    //Dichiarazione variabili
     const priceForKm = 0.21;
     let price = (distanceInput.value * priceForKm);
 
-    e.preventDefault();
-    console.log('Age input value: ' + ageInput.value);
-    console.log('Km input value: ' + distanceInput.value);
+
+    //Logica elaborazione dati
     if (ageInput.value === 'under18') {
         const discountPercent = 0.8;
         price = (price * discountPercent);
@@ -38,6 +42,10 @@ form.addEventListener('submit', function (e) {
         const discountPercent = 0.6;
         price = (price * discountPercent);
     }
-    console.log(price.toFixed(2))
+
+    //Stampa dati
+    ticketOwnerNameEl.innerHTML = nameInput.value;
+    typeTicketEl.innerHTML = ageInput.value;
+    priceTicketEl.innerHTML = price.toFixed(2);
 }
 )
