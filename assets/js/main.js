@@ -23,8 +23,11 @@ const form = document.querySelector('.inputs');
 
 //ELEMENTI DEL BIGLIETTO DA VISUALIZZARE
 let ticketOwnerNameEl = document.querySelector('.passenger-name');
+let carriageEl = document.querySelector('.carriage');
+let numberTrainEl = document.querySelector('.number-train');
 let typeTicketEl = document.querySelector('.type-ticket');
 let priceTicketEl = document.querySelector('.price-ticket');
+let ticketCardEl = document.getElementById('ticketCard');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -32,20 +35,26 @@ form.addEventListener('submit', function (e) {
     //Dichiarazione variabili
     const priceForKm = 0.21;
     let price = (distanceInput.value * priceForKm);
-
+    let ticketType = 'Biglietto standard';
 
     //Logica elaborazione dati
     if (ageInput.value === 'under18') {
         const discountPercent = 0.8;
         price = (price * discountPercent);
+        ticketType = 'Biglietto ridotto under 18';
     } else if (ageInput.value === 'over65') {
         const discountPercent = 0.6;
         price = (price * discountPercent);
+        ticketType = 'Biglietto ridotto over 65';
     }
 
     //Stampa dati
+
     ticketOwnerNameEl.innerHTML = nameInput.value;
-    typeTicketEl.innerHTML = ageInput.value;
+    carriageEl.innerHTML = Math.floor(Math.random() * 13) + 1;
+    numberTrainEl.innerHTML = 92213;
+    typeTicketEl.innerHTML = ticketType;
     priceTicketEl.innerHTML = price.toFixed(2);
+    ticketCardEl.classList.remove('d-none');
 }
 )

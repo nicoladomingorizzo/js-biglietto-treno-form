@@ -24,7 +24,7 @@
         <div class="inputs justify-content-center row">
             <form class="inputs" action="">
                 <!-- Name Input -->
-                <div class="mt-5 text-center col-3-lg col-6-md  col-12-sm">
+                <div class="mt-3 text-center col-3-lg col-6-md  col-12-sm">
                     <label for="fullname" class="form-label">Nome completo utente</label>
                     <input id="fullname" class="name mt-1 mx-auto text-center py-1 fs-5" type="text"
                         placeholder="Inserisci il tuo nome..." required>
@@ -32,7 +32,7 @@
 
                 <!-- Distance Input -->
                 <div class="d-flex justify-content-center col-3-lg col-6-md  col-12-sm">
-                    <div class="mt-5 text-center">
+                    <div class="mt-3 text-center">
                         <label for="distance" class="form-label">Distanza da percorrere</label>
                         <input id="distance" class="km mt-1 mx-auto text-center py-1 fs-5" type="number"
                             placeholder="Km da percorrere...">
@@ -40,7 +40,7 @@
                 </div>
 
                 <!-- Age Input -->
-                <div class="mt-5 text-center col-3-lg col-6-md col-12-sm">
+                <div class="mt-3 text-center col-3-lg col-6-md col-12-sm">
                     <label for="age" class="form-label">Età del passeggero</label>
                     <select id="age" class="age mt-1 mx-auto text-center py-2 fs-5" type="form-select"
                         placeholder="Età passeggero...">
@@ -77,14 +77,16 @@
             </div>
         </section>
         <div class="col-12">
-            <div class="card">
+            <div id="ticketCard" class="card d-none">
                 <div class="card-header">
-                    <h3 class="passenger-details">Dettaglio passegero</h3>
+                    <h3 class="passenger-details text-center">Grazie per aver scelto TreniRizzo <br>a seguire
+                        appariranno i dati
+                        digitali del biglietto</h3>
                 </div>
                 <div class="card-body">
                     <div class="passenger-name"></div>
-                    <div class="carriage">7</div>
-                    <div class="number-train">92213</div>
+                    <div class="carriage"></div>
+                    <div class="number-train"></div>
                     <div class="type-ticket"></div>
                     <div class="price-ticket"></div>
                 </div>
