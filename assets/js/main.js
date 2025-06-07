@@ -28,6 +28,7 @@ let numberTrainEl = document.querySelector('.number-train');
 let typeTicketEl = document.querySelector('.type-ticket');
 let priceTicketEl = document.querySelector('.price-ticket');
 let ticketCardEl = document.getElementById('ticketCard');
+let buyTicketel = document.querySelector('.buy-ticket');
 
 form.addEventListener('submit', function (e) {
     e.preventDefault();
@@ -50,11 +51,12 @@ form.addEventListener('submit', function (e) {
 
     //Stampa dati
 
-    ticketOwnerNameEl.innerHTML = nameInput.value;
-    carriageEl.innerHTML = Math.floor(Math.random() * 13) + 1;
-    numberTrainEl.innerHTML = 92213;
+    ticketOwnerNameEl.innerHTML = `Proprietario del biglietto: ${nameInput.value}`;
+    carriageEl.innerHTML = `Carrozza numero: ${Math.floor(Math.random() * 10) + 1}`;
+    numberTrainEl.innerHTML = `Numero del treno: 92213`;
     typeTicketEl.innerHTML = ticketType;
-    priceTicketEl.innerHTML = price.toFixed(2);
+    priceTicketEl.innerHTML = `Il prezzo del biglietto acquistato è: ${price.toFixed(2)}&euro;`;
+    buyTicketel.innerHTML = 'Termina acquisto'
     ticketCardEl.classList.remove('d-none');
 }
 )
