@@ -26,15 +26,15 @@
                 <!-- Name Input -->
                 <div class="mt-5 text-center col-3-lg col-6-md  col-12-sm">
                     <label for="fullname" class="form-label">Nome completo utente</label>
-                    <input class="name mt-1 mx-auto text-center py-1 fs-5" type="text"
-                        placeholder="Inserisci il tuo nome...">
+                    <input id="fullname" class="name mt-1 mx-auto text-center py-1 fs-5" type="text"
+                        placeholder="Inserisci il tuo nome..." required>
                 </div>
 
                 <!-- Distance Input -->
                 <div class="d-flex justify-content-center col-3-lg col-6-md  col-12-sm">
                     <div class="mt-5 text-center">
                         <label for="distance" class="form-label">Distanza da percorrere</label>
-                        <input class="km mt-1 mx-auto text-center py-1 fs-5" type="text"
+                        <input id="distance" class="km mt-1 mx-auto text-center py-1 fs-5" type="number"
                             placeholder="Km da percorrere...">
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                 <!-- Age Input -->
                 <div class="mt-5 text-center col-3-lg col-6-md col-12-sm">
                     <label for="age" class="form-label">Età del passeggero</label>
-                    <select class="age mt-1 mx-auto text-center py-2 fs-5" type="form-select"
+                    <select id="age" class="age mt-1 mx-auto text-center py-2 fs-5" type="form-select"
                         placeholder="Età passeggero...">
                         <option disabled value="disabled">Selezione età...</option>
                         <option value="under18">Da 0 a 18 anni</option>
@@ -53,8 +53,8 @@
 
                 <!-- Button submit -->
                 <div class="text-center text-white col-12">
-                    <button type="submit"
-                        class="btn btn-dark btn-outline-dark btn-lg mt-3 mx-auto text-white">Invia</button>
+                    <input type="submit" id="ticketSubmit"
+                        class="btn btn-dark btn-outline-dark btn-lg mt-3 mx-auto text-white">
                 </div>
             </form>
             <!-- Price and Discount -->
@@ -83,6 +83,8 @@
                 </div>
                 <div class="card-body">
                     <div class="passenger-name"></div>
+                    <div class="carriage"></div>
+                    <div class="number-train"></div>
                     <div class="type-of-ticket"></div>
                     <div class="price-ticket"></div>
                 </div>
